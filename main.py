@@ -22,19 +22,19 @@ frame_tela.grid(row=0, column=0) #linha, coluna
 frame_corpo = Frame(janela, width=235, height=268) #largura , altura
 frame_corpo.grid(row=1, column=0) #linha, coluna
 
-# criando função
-def calcular():
+# criando função entrar valores
+def entrar_valores(): 
     resultado = eval('9/9')
     
     #passando o valor para tela
-    valor_texto.set(resultado)
+    valor_texto.set(resultado) # chamamos a váriavel que recebe valores dinamicamentes.
 
 
 #criando a label
-valor_texto = StringVar() #Alterando o valor de uma label
+valor_texto = StringVar() #Alterando o valor de uma label, criando variável que recebe valores de strings dinamicamentes.
 
 app_label = Label(frame_tela, textvariable =valor_texto, width=16, height=2, padx=7, relief= FLAT, anchor='e', justify= RIGHT, font=('Ivy 16'),bg = cor3, fg=cor2) #exibir texto, altura e largura, espaço entre janela,
-app_label.place(x=0, y=0) #executando tela, localização da tela, valor_texto
+app_label.place(x=0, y=0) #executando tela, localização da tela, valor_texto variável que recebe o valor de strings dinamicamentes
 
 #criando os botões
 
@@ -79,6 +79,5 @@ b_17.place(x=118, y=208) #executando tela, localização da tela
 b_18 = Button(frame_corpo, text= '=', width=5, height=2, bg= cor5, fg=cor3,font=('Ivy 13 bold'), relief= RAISED, overrelief= RIDGE) #botão igualdade
 b_18.place(x=177, y=208) #executando tela, localização da tela
 
-calcular()
 
 janela.mainloop() #Executar janela
