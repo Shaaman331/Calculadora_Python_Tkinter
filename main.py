@@ -22,9 +22,19 @@ frame_tela.grid(row=0, column=0) #linha, coluna
 frame_corpo = Frame(janela, width=235, height=268) #largura , altura
 frame_corpo.grid(row=1, column=0) #linha, coluna
 
+# criando função
+def calcular():
+    resultado = eval('9/9')
+    
+    #passando o valor para tela
+    valor_texto.set(resultado)
+
+
 #criando a label
-app_label = Label(frame_tela, text = '123456789', width=16, height=2, padx=7, relief= FLAT, anchor='e', justify= RIGHT, font=('Ivy 16'),bg = cor3, fg=cor2) #exibir texto, altura e largura, espaço entre janela,
-app_label.place(x=0, y=0) #executando tela, localização da tela
+valor_texto = StringVar() #Alterando o valor de uma label
+
+app_label = Label(frame_tela, textvariable =valor_texto, width=16, height=2, padx=7, relief= FLAT, anchor='e', justify= RIGHT, font=('Ivy 16'),bg = cor3, fg=cor2) #exibir texto, altura e largura, espaço entre janela,
+app_label.place(x=0, y=0) #executando tela, localização da tela, valor_texto
 
 #criando os botões
 
@@ -68,4 +78,7 @@ b_17 = Button(frame_corpo, text= '.', width=5, height=2, bg= cor4, font=('Ivy 13
 b_17.place(x=118, y=208) #executando tela, localização da tela
 b_18 = Button(frame_corpo, text= '=', width=5, height=2, bg= cor5, fg=cor3,font=('Ivy 13 bold'), relief= RAISED, overrelief= RIDGE) #botão igualdade
 b_18.place(x=177, y=208) #executando tela, localização da tela
+
+calcular()
+
 janela.mainloop() #Executar janela
