@@ -22,14 +22,19 @@ frame_tela.grid(row=0, column=0) #linha, coluna
 frame_corpo = Frame(janela, width=235, height=268) #largura , altura
 frame_corpo.grid(row=1, column=0) #linha, coluna
 
+# variavel global todos_valores onde são armazenados os valores digitados na tela
+todos_valores = ''
+
 # criando função entrar valores
-def entrar_valores(envent): #criando evento que recebe qualquer valor a ser executado 
-    resultado = eval('9/9')
+def entrar_valores(event): # criando evento onde passa todos os valores 
+    
+    global todos_valores # todos os valores passam a ser executados na tela
+    
+    todos_valores = todos_valores + str(event) 
     
     #passando o valor para tela
-    valor_texto.set(resultado) # chamamos a váriavel que recebe valores dinamicamentes.
-
-
+    valor_texto.set(todos_valores) # chamamos a váriavel que recebe valores dinamicamentes.
+    
 #criando a label
 valor_texto = StringVar() #Alterando o valor de uma label, criando variável que recebe valores de strings dinamicamentes.
 
