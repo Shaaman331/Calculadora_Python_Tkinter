@@ -40,9 +40,15 @@ def entrar_valores(event): # criando evento onde passa todos os valores
 
 # criando função para calcular 
 def calcular():
+    global todos_valores # declaramos variável global para manter todos os valoes em todas funções todos_valores
     resultado = eval(todos_valores)
     print(resultado)
 
+#criando função para limpar tela
+def limpar_tela():
+    global todos_valores # declaramos variável global para manter todos valores em todas funções todos_valores
+    todos_valores = ''
+    valor_texto.set('')
     
 
 app_label = Label(frame_tela, textvariable =valor_texto, width=16, height=2, padx=7, relief= FLAT, anchor='e', justify= RIGHT, font=('Ivy 16'),bg = cor3, fg=cor2) #exibir texto, altura e largura, espaço entre janela,
@@ -50,7 +56,7 @@ app_label.place(x=0, y=0) #executando tela, localização da tela, valor_texto v
 
 #criando os botões
 
-b_1 = Button(frame_corpo, text= 'C', width=11, height=2, bg= cor4,font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE) #botão clear
+b_1 = Button(frame_corpo,command= limpar_tela, text= 'C', width=11, height=2, bg= cor4,font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE) #botão clear
 b_1.place(x=0, y=0) #executando tela, localização da tela
 b_2 = Button(frame_corpo, command= lambda :entrar_valores('%'), text= '%', width=5, height=2, bg= cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief= RIDGE) #botão módulo
 b_2.place(x=118, y=0) #executando tela, localização da tela, integrando valores com a função lambda 
