@@ -23,7 +23,7 @@ frame_corpo = Frame(janela, width=235, height=268) #largura , altura
 frame_corpo.grid(row=1, column=0) #linha, coluna
 
 # criando função entrar valores
-def entrar_valores(): 
+def entrar_valores(envent): #criando evento que recebe qualquer valor a ser executado 
     resultado = eval('9/9')
     
     #passando o valor para tela
@@ -40,8 +40,8 @@ app_label.place(x=0, y=0) #executando tela, localização da tela, valor_texto v
 
 b_1 = Button(frame_corpo, text= 'C', width=11, height=2, bg= cor4,font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE) #botão clear
 b_1.place(x=0, y=0) #executando tela, localização da tela
-b_2 = Button(frame_corpo, text= '%', width=5, height=2, bg= cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief= RIDGE) #botão módulo
-b_2.place(x=118, y=0) #executando tela, localização da tela
+b_2 = Button(frame_corpo, command= lambda :entrar_valores('%'), text= '%', width=5, height=2, bg= cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief= RIDGE) #botão módulo
+b_2.place(x=118, y=0) #executando tela, localização da tela, integrando valores com a função lambda 
 b_3 = Button(frame_corpo, text= '/', width=5, height=2, bg= cor5, fg=cor3,font=('Ivy 13 bold'), relief= RAISED, overrelief= RIDGE) #botão disão
 b_3.place(x=177, y=0) #executando tela, localização da tela
 
