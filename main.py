@@ -25,6 +25,9 @@ frame_corpo.grid(row=1, column=0) #linha, coluna
 # variavel global todos_valores onde são armazenados os valores digitados na tela
 todos_valores = ''
 
+#criando a label
+valor_texto = StringVar() #Alterando o valor de uma label, criando variável que recebe valores de strings dinamicamentes.
+
 # criando função entrar valores
 def entrar_valores(event): # criando evento onde passa todos os valores 
     
@@ -34,9 +37,13 @@ def entrar_valores(event): # criando evento onde passa todos os valores
     
     #passando o valor para tela
     valor_texto.set(todos_valores) # chamamos a váriavel que recebe valores dinamicamentes.
+
+# criando função para calcular 
+def calcular():
+    resultado = eval(todos_valores)
+    print(resultado)
+
     
-#criando a label
-valor_texto = StringVar() #Alterando o valor de uma label, criando variável que recebe valores de strings dinamicamentes.
 
 app_label = Label(frame_tela, textvariable =valor_texto, width=16, height=2, padx=7, relief= FLAT, anchor='e', justify= RIGHT, font=('Ivy 16'),bg = cor3, fg=cor2) #exibir texto, altura e largura, espaço entre janela,
 app_label.place(x=0, y=0) #executando tela, localização da tela, valor_texto variável que recebe o valor de strings dinamicamentes
@@ -81,8 +88,8 @@ b_16 = Button(frame_corpo, command= lambda :entrar_valores('0'),text= '0', width
 b_16.place(x=0, y=208) #executando tela, localização da tela, integrando valores com a função lambda
 b_17 = Button(frame_corpo, command= lambda :entrar_valores('.'),text= '.', width=5, height=2, bg= cor4, font=('Ivy 13 bold'), relief=RAISED, overrelief= RIDGE) #botão ponto
 b_17.place(x=118, y=208) #executando tela, localização da tela, integrando valores com a função lambda
-b_18 = Button(frame_corpo, command= lambda :entrar_valores('%'),text= '=', width=5, height=2, bg= cor5, fg=cor3,font=('Ivy 13 bold'), relief= RAISED, overrelief= RIDGE) #botão igualdade
-b_18.place(x=177, y=208) #executando tela, localização da tela, integrando valores com a função lambda
+b_18 = Button(frame_corpo, command= calcular,text= '=', width=5, height=2, bg= cor5, fg=cor3,font=('Ivy 13 bold'), relief= RAISED, overrelief= RIDGE) #botão igualdade
+b_18.place(x=177, y=208) #executando tela, localização da tela, integrando valores com a função calcular
 
 
 janela.mainloop() #Executar janela
