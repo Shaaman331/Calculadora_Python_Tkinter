@@ -42,8 +42,9 @@ def entrar_valores(event): # criando evento onde passa todos os valores
 def calcular():
     global todos_valores # declaramos variável global para manter todos os valoes em todas funções todos_valores
     resultado = eval(todos_valores)
-    print(resultado)
-
+    
+    valor_texto.set(str(resultado)) #apresentar resultado somente na calculadora
+    todos_valores = str(resultado)
 #criando função para limpar tela
 def limpar_tela():
     global todos_valores # declaramos variável global para manter todos valores em todas funções todos_valores
